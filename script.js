@@ -107,3 +107,4 @@ console.log(`dataset 2, string:`);
 poll.displayResults.call(test2, 'string');
 console.log(`dataset 2, array:`);
 poll.displayResults.call(test2, 'array');
+// re loco
