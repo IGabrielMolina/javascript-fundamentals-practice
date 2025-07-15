@@ -79,6 +79,8 @@ const poll = {
   },
 };
 
+// This is a staging test comment, kinda useless in itself but it's helping me learn how to handle commits faster. Better
+
 const answerBtn = document.querySelector('.poll');
 console.log(`Selected element:`);
 console.log(answerBtn.outerHTML);
