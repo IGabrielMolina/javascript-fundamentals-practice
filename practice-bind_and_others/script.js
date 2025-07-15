@@ -79,7 +79,7 @@ const poll = {
   },
 };
 
-// This is a staging test comment, kinda useless in itself but it's helping me learn how to handle commits faster. Better
+// This is a staging test comment, kinda useless in itself but it's helping me learn how to handle commits faster. Better. Ok I've set up the keybindings which I wont let anyone convince me that is not faster than prompting ctrl+shift+p and writing wthe whole command, and now im saving everything.
 
 const answerBtn = document.querySelector('.poll');
 console.log(`Selected element:`);
