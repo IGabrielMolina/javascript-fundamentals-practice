@@ -36,4 +36,4 @@ and what that means for the variables involved in this example.
   });
 })();
 
-// I also learned how proffesionals
+// I also learned how proffesionals use self-docummenting code, and stick to Clean Code, I tought that philosophy had a more complicated name but it's not the case :P
