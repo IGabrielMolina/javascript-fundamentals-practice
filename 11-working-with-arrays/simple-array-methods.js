@@ -107,9 +107,4 @@ console.log([...arr, ...arr2]);
 // JOIN just joins all the items inside an array and returns them as a string, joined by the passed character/s.
 console.log(letters.join(' - '));
 
-// getting last array element
-const arr = [23, 11, 64];
-//
-console.log(arr.slice);
-
 /////////////////////////////////////////////////
