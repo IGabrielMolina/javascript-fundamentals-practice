@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "🚀 Clonar Ejercicio Actual",
+			"type": "shell",
+			"command": "powershell -File ./.vscode/new-exercise.ps1 '${file}'",
+			"presentation": {
+				"reveal": "never"
+			},
+			"problemMatcher": []
+		}
+	]
+}
