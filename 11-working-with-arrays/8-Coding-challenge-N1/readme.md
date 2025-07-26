@@ -53,7 +53,9 @@ Ok so, I started by reading the whole challenge, then I figured out how to best 
 
 after that I worked on the function, I associated in point 1. with the .slice array method and stored the result along with the concatenated values of kate's logs , in a final array than Iterated over right after, with the .forEach method .
 
+```javascript
 > finalArray.forEach(function (dogAge, i) {
+```
 
 remembered when passing the parameters to the callback function that the way .forEach is used in arrays, I could pass element, index, and array to the callback function, but I only needed current element and index, so that's what I used
 
