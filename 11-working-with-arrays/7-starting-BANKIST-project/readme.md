@@ -1,5 +1,5 @@
 <font color="lightgreen" size="4px"><b>
-The following are my learning notes about using the forEach method in maps and sets.
+The following are my learning notes about using the forEach method in maps and sets as I start working my way into the bakist app developement
 </b></font>
 
 ---
