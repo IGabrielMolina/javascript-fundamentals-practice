@@ -58,8 +58,10 @@ Although we NEED to pass the second parameter, it's useless, in a set the "key" 
 <p>[the key]: [the value]</p>
 It will output this:
 
-![](image-1.png)
+![][def]
 
 So when working with this we can just ignore the **second parameter**, it NEEDS to be there, but its pointless,
 
 just pass an **\_** (Underscore) as the second parameter, and that's it.
+
+[def]: image-1.png
