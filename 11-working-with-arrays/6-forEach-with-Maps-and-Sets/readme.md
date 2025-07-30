@@ -58,6 +58,10 @@ Although we NEED to pass the second parameter, it's useless, in a set the "key" 
 <p>[the key]: [the value]</p>
 It will output this:
 
+> USD: USD
+> BGP: GBP
+> EUR: EUR
+
 ![][def]
 
 So when working with this we can just ignore the **second parameter**, it NEEDS to be there, but its pointless,
