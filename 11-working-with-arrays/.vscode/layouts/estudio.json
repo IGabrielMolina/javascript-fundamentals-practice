@@ -1,0 +1,35 @@
+{
+	"timestamp": 1754268023267,
+	"tabGroups": [
+		{
+			"viewColumn": 1,
+			"activeTabIndex": 1,
+			"tabs": [
+				{
+					"input": {
+						"type": "TabInputText",
+						"uri": "file:///z%3A/webDev/javascript-fundamentals-practice/11-working-with-arrays/11-Computing_usernames/style.css",
+						"relativePath": "11-Computing_usernames/style.css"
+					},
+					"isPinned": false,
+					"isPreview": false
+				},
+				{
+					"input": {
+						"type": "unknown"
+					},
+					"isPinned": false,
+					"isPreview": false
+				}
+			]
+		}
+	],
+	"editorLayout": {
+		"orientation": 0,
+		"groups": [
+			{
+				"size": 1100
+			}
+		]
+	}
+}
