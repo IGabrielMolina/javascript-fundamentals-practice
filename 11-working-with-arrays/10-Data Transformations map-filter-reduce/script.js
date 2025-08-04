@@ -244,6 +244,16 @@ console.log(movements);
 console.log(movementsUSD);
 console.log('-------now with arrow function-------');
 
-const arrowToUSD = movements.map(mov) => {
-  return Math.round(mov * arrowToUSD)
-};
+const arrowToUSD = movements.map(mov => Math.round(mov * eurToUsd));
+
+console.log(arrowToUSD);
+
+const movementsDescriptions = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    return `Movement ${i + 1}: You deposited ${mov}`;
+  } else {
+    return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
+  }
+});
+
+console.log(movementsDescriptions);

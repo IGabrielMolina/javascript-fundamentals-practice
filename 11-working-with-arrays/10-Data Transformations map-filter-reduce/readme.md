@@ -50,3 +50,7 @@ const movementsUSD = movements.map(function (mov) {
 console.log(movements);
 console.log(movementsUSD);
 ```
+
+Then I implemented the simplification using arrow function.
+
+removed the function word, replace it with an arrow, we can also leave out the return because we're not using curly braces {}
