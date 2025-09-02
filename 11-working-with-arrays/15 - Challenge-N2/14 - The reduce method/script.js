@@ -67,7 +67,6 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-/*
 /////////////////////////////////////////////////
 // Functions
 
@@ -102,29 +101,39 @@ const createUserNames = function (accs) {
   });
 };
 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
 displayMovements(account1.movements);
+
+// const calcDisplayBalance = function (movements) {
+//   const balance = movements.reduce((acc, mov) => acc + mov, 0);
+//   labelBalance.textContent = `${balance} EUR`;
+// };
+
+const calcDisplayBalance = movements.reduce(
+  (prev, curr, i, arr) => prev + curr
+);
+
+// calcDisplayBalance(account1.movements);
+
+const totalBalance = movements.reduce((acc, cur) => acc + cur, 0);
+
 createUserNames(accounts);
 
-console.log(accounts);
-*/
-displayMovements(account1.movements);
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// console.log(accounts);
 
 const deposits = movements.filter(function (mov) {
   return mov > 0;
 });
 
-console.log(movements);
-console.log(deposits);
+// console.log(movements);
+// console.log(deposits);
 
 const withdrawals = movements.filter(mov => mov < 0);
 
-console.log(withdrawals);
-
 /*
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- LECTURES
+LECTURES
 
 
 // SLICE
@@ -284,3 +293,18 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
 });
 
 // console.log(movementsDescriptions);
+
+console.log(movements);
+console.log('');
+
+const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
+
+console.log(balance);
+
+// Get the max
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]);
+
+console.log(max);
