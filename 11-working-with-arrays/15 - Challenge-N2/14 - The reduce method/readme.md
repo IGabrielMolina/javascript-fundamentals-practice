@@ -1,64 +1,33 @@
-Just like map, it iterates over every element in the array, applying the callback function we pass to it, but reduce does this with the objective of turning all the array into a single value, processing the whole array with whatever funciton we pass as a callback
+This is challenge #2
 
-syntax:
+Let's go back to Julia and Kate's study about dogs. This time, they want to convert
+dog ages to human ages and calculate the average age of the dogs in their study.
+Your tasks:
+Create a function 'calcAverageHumanAge', which accepts an arrays of dog's
+ages ('ages'), and does the following things in order:
 
 ```javascript
-reduce(callback, initialValue);
+/*
+1. Calculate the dog age in human years using the following formula: if the dog is
+   <= 2 years old, humanAge = 2 x dogAge. If the dog is > 2 years old,
+   humanAge = 16 + dogAge x 4
+
+2. Exclude all dogs that are less than 18 human years old (which is the same as
+   keeping dogs that are at least 18 years old)
+
+3. Calculate the average human age of all adult dogs (you should already know
+   from other challenges how we calculate averages �)
+4. Run the function for both test datasets
+
+   Test data:
+   § Data 1: [5, 2, 4, 1, 15, 8, 3]
+   § Data 2: [16, 6, 10, 5, 6, 1, 4]
+   GOOD LUCK �
+   */
 ```
 
-at the same time the callback function can take the following values:
+Ok lets see, I will just...
 
 ```javascript
-callback(accumulator, currentValue, index, array);
-```
 
-so in example, if we need to calculate the balance of an account, we just use the reduce method to iterate over the "movements" array, while reducing their values to a single value by simply adding them up, which would give us the total current balance of the account. We do it like this:
-
-```javascript
-const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
-```
-
-which is the same as the long way of doing it:
-
-```javascript
-const balance = movements.reduce(function (acc, cur, i, arr) {
-  return acc + cur, 0;
-});
-```
-
-The `(acc, cur, i, arr)` are the parameters we always pass to the reduce method, in that order.
-
-the accumulator, the current value of that iteration, the index, and the whole aray itself.
-
-This example is for one reduce method
-
-```javascript
-const calcDisplayBalance = movements.reduce(
-  (prev, curr, i, arr) => prev + curr
-);
-```
-
-Which is the same as the long form:
-
-```javascript
-const calcDisplayBalance = movements.reduce(function (prev, curr, i, arr) {
-  return prev + curr;
-});
-```
-
-or the one using for, which Im not gonna write here because at this point it's almost medieval.
-
-## Maximum variable
-
-```javascript
-// Get the max
-
-// We declare a constant to pout the reduce method in...
-const max = movements.reduce((acc, mov) => {
-  //
-  if (acc > mov) return acc;
-  else return mov;
-}, movements[0]);
-
-console.log(max);
 ```

@@ -294,12 +294,12 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
 
 // console.log(movementsDescriptions);
 
-console.log(movements);
-console.log('');
+// console.log(movements);
+// console.log('');
 
 const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
 
-console.log(balance);
+// console.log(balance);
 
 // Get the max
 const max = movements.reduce((acc, mov) => {
@@ -307,4 +307,149 @@ const max = movements.reduce((acc, mov) => {
   else return mov;
 }, movements[0]);
 
-console.log(max);
+// console.log(max);
+
+/*
+Let's go back to Julia and Kate's study about dogs. This time, they want to convert
+dog ages to human ages and calculate the average age of the dogs in their study.
+Your tasks:
+Create a function 'calcAverageHumanAge', which accepts an arrays of dog's
+ages ('ages'), and does the following things in order:
+1. Calculate the dog age in human years using the following formula: if the dog is
+<= 2 years old, humanAge = 2 * dogAge. If the dog is > 2 years old,
+humanAge = 16 + dogAge * 4
+2. Exclude all dogs that are less than 18 human years old (which is the same as
+keeping dogs that are at least 18 years old)
+3. Calculate the average human age of all adult dogs (you should already know
+from other challenges how we calculate averages �)
+4. Run the function for both test datasets
+Test data:
+§ Data 1: [5, 2, 4, 1, 15, 8, 3]
+§ Data 2: [16, 6, 10, 5, 6, 1, 4]
+GOOD LUCK �
+
+*/
+
+const checkDogs = function (dogsJulia, dogsKate) {
+  const dogsJuliaCorrected = dogsJulia.slice();
+  dogsJuliaCorrected.splice(0, 1);
+  dogsJuliaCorrected.splice(-2);
+  // dogsJulia.slice(1, 3);
+  const dogs = dogsJuliaCorrected.concat(dogsKate);
+  console.log(dogs);
+
+  dogs.forEach(function (dog, i) {
+    if (dog >= 3) {
+      console.log(`Dog number ${i + 1} is an adult, and is ${dog} years old`);
+    } else {
+      console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+    }
+  });
+};
+// checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+const calcAverageHumanAge = ages => {
+  const dogAgesInHumanAges = ages.map(currentage => {
+    if (currentage <= 2) {
+      return currentage * 2;
+    } else {
+      return 16 + currentage * 4;
+    }
+  });
+  const finalDogAges = dogAgesInHumanAges.filter(age => {
+    if (age < 18) {
+    }
+  });
+};
+
+/*-------------------------------------------------
+
+// Calentamiento 1: El Transformador (.map())
+Tenés una lista de puntajes de un juego. Si el puntaje es 50 o más, lo duplicás. Si es menor, lo dejás como está. Tenés que crear un nuevo array con los puntajes modificados.
+*/
+
+const puntajes = [25, 60, 10, 80, 45];
+console.log('puntajes anteriores:');
+console.log(puntajes);
+
+// TU CÓDIGO ACÁ
+// Pista: necesitás un .map() con un if/else (o un ternario) adentro que devuelva un valor.
+const puntajesModificados = puntajes.map(current => {
+  if (current >= 50) {
+    return current * 2;
+  } else {
+    return current;
+  }
+});
+
+console.log(puntajesModificados); // Debería dar [25, 120, 10, 160, 45]
+
+/*----------------------------------------------------------
+Calentamiento 2: El Patovica (.filter())
+
+El Objetivo: De una lista de duraciones de videos (en minutos), querés quedarte solamente con los videos que son cortos (10 minutos o menos) para hacer un resumen.
+*/
+
+console.log('calentameinto 2');
+const duraciones = [5, 12, 8, 25, 3, 10];
+
+// TU CÓDIGO ACÁ
+// Pista: necesitás un .filter() que devuelva 'true' solo para los números que cumplen la condición.
+const videosCortos = duraciones.filter(function (value) {
+  return value <= 10;
+});
+
+console.log(videosCortos); // Debería dar [5, 8, 3, 10]
+
+/*------------------------------------------------------
+3. El Método .reduce() (La Calculadora / El Acumulador)
+
+El Objetivo:
+Tenés una lista con las propinas que dejaron en varias mesas. Querés saber el promedio de propina que dejaron.
+
+*/
+const propinas = [100, 250, 50, 150];
+
+// TU CÓDIGO ACÁ
+// Pista: primero usá .reduce() para sumar todo. Después, dividí esa suma por la cantidad de elementos.
+const promedioPropinas =
+  propinas.reduce((acu, propiActual) => {
+    return acu + propiActual;
+  }) / propinas.length;
+
+console.log(promedioPropinas); // Debería dar 137.5
+
+/*--------------------------------------------------------------
+Calentamiento Final: El Combo (Encadenamiento)
+
+El Objetivo: Ahora juntamos todo. Tenés una lista de precios de productos en dólares. Querés hacer tres cosas, en orden:
+
+Convertir todos los precios a pesos (multiplicando por 1000).
+
+De esos precios en pesos, quedarte solo con los que son de más de 5000 pesos.
+
+Calcular el promedio de esos productos caros.
+*/
+
+console.log('Calentamiento final');
+
+const preciosDolar = [10, 4, 25, 8, 2];
+
+const promedioCarosEnPesos = preciosDolar
+  .map(precio => {
+    return precio * 1000;
+  })
+  .filter(preci => {
+    return preci > 5000;
+  })
+  .reduce((acu, curr, i, arrayCompleto) => {
+    if (i + 1 === arrayCompleto.length) {
+      return (acu + curr) / arrayCompleto.length;
+    } else {
+      return acu + curr;
+    }
+  });
+
+console.log(promedioCarosEnPesos);
+
+// Debería dar 17500 ( (10000 + 25000 + 8000) / 3 ) -> Corrección: (10000 + 25000) / 2 = 17500

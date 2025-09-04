@@ -18,6 +18,6 @@ const deposits = movements.filter(function (mov) {
 });
 ```
 
-this method is a simple but an effective one.
+this method is a simple but quite unbreakable.
 
 ![alt text](image-6.png)
