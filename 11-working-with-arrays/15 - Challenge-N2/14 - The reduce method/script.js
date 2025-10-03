@@ -452,4 +452,23 @@ const promedioCarosEnPesos = preciosDolar
 
 console.log(promedioCarosEnPesos);
 
+console.clear();
 // Debería dar 17500 ( (10000 + 25000 + 8000) / 3 ) -> Corrección: (10000 + 25000) / 2 = 17500
+
+const dogInHumanAges2 = dogAge => {
+  const averages = dogAge
+    .map(x => (x <= 2 ? x * 2 : 16 + x * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, act, i, arr) => acc + act / arr.length, 0);
+  return averages;
+};
+
+const setsPrueba = [
+  [5, 2, 4, 1, 15, 8, 3],
+  [16, 6, 10, 5, 6, 1, 4],
+];
+
+for (const set of setsPrueba) {
+  const result = dogInHumanAges2(set);
+  console.log(`El promedio para el set ${set} es ${result}`);
+}
