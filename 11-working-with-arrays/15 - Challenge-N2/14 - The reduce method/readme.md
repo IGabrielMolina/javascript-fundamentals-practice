@@ -26,7 +26,15 @@ ages ('ages'), and does the following things in order:
    */
 ```
 
-Ok lets see, I will just...
+I have decided that logging my chain of tought is extremely unproductive if I take in consideration the time spent doing so, time which would be better invested in studying in itself, so starting from this point I will only document the code I wrote in each lesson and the main takeaways, just so my reasoning and learning process is readable in a concise, brief, and efficient manner.
+
+For this challenge, I learned how to use filter, map, sets, and I also shained said methods, aaand I also played around with ArrayFrom even tho you won't see it in this code, since it is not a part of the challenge
+
+Thanks for reading!
+
+edit: I learned chaining while doing this challenge because I wanted a more efficient way of writing this code adnd I found out about chaining, but as it turns out that was the content of class 15 and 16 challenge #3 haha, so yeah, Next folder will be chapter 17 OH IT's the find method I'VE BEEN WAITING for this one!
+
+thanks again for taking an interest on my learning journey, and see you in the next readme!
 
 ```javascript
 
