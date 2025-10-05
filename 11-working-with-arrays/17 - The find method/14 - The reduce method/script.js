@@ -431,44 +431,70 @@ De esos precios en pesos, quedarte solo con los que son de más de 5000 pesos.
 Calcular el promedio de esos productos caros.
 */
 
-console.log('Calentamiento final');
+// console.log('Calentamiento final');
 
-const preciosDolar = [10, 4, 25, 8, 2];
+// const preciosDolar = [10, 4, 25, 8, 2];
 
-const promedioCarosEnPesos = preciosDolar
-  .map(precio => {
-    return precio * 1000;
-  })
-  .filter(preci => {
-    return preci > 5000;
-  })
-  .reduce((acu, curr, i, arrayCompleto) => {
-    if (i + 1 === arrayCompleto.length) {
-      return (acu + curr) / arrayCompleto.length;
-    } else {
-      return acu + curr;
-    }
-  });
+// const promedioCarosEnPesos = preciosDolar
+//   .map(precio => {
+//     return precio * 1000;
+//   })
+//   .filter(preci => {
+//     return preci > 5000;
+//   })
+//   .reduce((acu, curr, i, arrayCompleto) => {
+//     if (i + 1 === arrayCompleto.length) {
+//       return (acu + curr) / arrayCompleto.length;
+//     } else {
+//       return acu + curr;
+//     }
+//   });
 
-console.log(promedioCarosEnPesos);
+// console.log(promedioCarosEnPesos);
+
+// console.clear();
+// // Debería dar 17500 ( (10000 + 25000 + 8000) / 3 ) -> Corrección: (10000 + 25000) / 2 = 17500
+
+// const dogInHumanAges2 = dogAge => {
+//   const averages = dogAge
+//     .map(x => (x <= 2 ? x * 2 : 16 + x * 4))
+//     .filter(age => age >= 18)
+//     .reduce((acc, act, i, arr) => acc + act / arr.length, 0);
+//   return averages;
+// };
+
+// const setsPrueba = [
+//   [5, 2, 4, 1, 15, 8, 3],
+//   [16, 6, 10, 5, 6, 1, 4],
+// ];
+
+// for (const set of setsPrueba) {
+//   const result = dogInHumanAges2(set);
+//   console.log(`El promedio para el set ${set} es ${result}`);
+// }
 
 console.clear();
-// Debería dar 17500 ( (10000 + 25000 + 8000) / 3 ) -> Corrección: (10000 + 25000) / 2 = 17500
 
-const dogInHumanAges2 = dogAge => {
-  const averages = dogAge
-    .map(x => (x <= 2 ? x * 2 : 16 + x * 4))
-    .filter(age => age >= 18)
-    .reduce((acc, act, i, arr) => acc + act / arr.length, 0);
-  return averages;
-};
+// class 17
 
-const setsPrueba = [
-  [5, 2, 4, 1, 15, 8, 3],
-  [16, 6, 10, 5, 6, 1, 4],
+const posts = [
+  { post_id: 101, platform: 'instagram', likes: 250 },
+  { post_id: 203, platform: 'tiktok', likes: 780 },
+  { post_id: 102, platform: 'instagram', likes: 400 },
+  { post_id: 301, platform: 'facebook', likes: 120 },
+  { post_id: 204, platform: 'tiktok', likes: 950 },
 ];
 
-for (const set of setsPrueba) {
-  const result = dogInHumanAges2(set);
-  console.log(`El promedio para el set ${set} es ${result}`);
-}
+const resultado = posts.reduce((acu, curr) => {
+  // acu is a ifnal object with lots of key value pairs
+  const currentLikes = curr.likes;
+  const currentPlatform = curr.platform;
+  if (acu[currentPlatform]) {
+    acu[currentPlatform] += currentLikes;
+  } else {
+    acu[curr.platform] = currentLikes;
+  }
+  return acu;
+}, {});
+
+console.log(resultado);

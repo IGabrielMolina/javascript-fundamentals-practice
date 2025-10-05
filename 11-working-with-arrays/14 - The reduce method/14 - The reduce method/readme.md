@@ -62,3 +62,13 @@ const max = movements.reduce((acc, mov) => {
 
 console.log(max);
 ```
+
+This is my main takeaway of the reduce method workflow:
+
+- ###### We start with an array of items. We apply the .reduce() method to this array and assign its final return value to a constant.
+
+- ###### Inside the callback function, we build our result with each iteration. This result, called the accumulator, can be a single value or a complex object.
+
+- ###### Crucially, in each iteration, we must return the accumulator so the next iteration can pick up where the previous one left off.
+
+- ###### Finally, our constant holds the final, accumulated value, ready to be used.
