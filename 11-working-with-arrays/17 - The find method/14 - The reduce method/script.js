@@ -476,25 +476,24 @@ Calcular el promedio de esos productos caros.
 console.clear();
 
 // class 17
+// the reduce method returns the first item that matches criteria of the callback function
 
-const posts = [
-  { post_id: 101, platform: 'instagram', likes: 250 },
-  { post_id: 203, platform: 'tiktok', likes: 780 },
-  { post_id: 102, platform: 'instagram', likes: 400 },
-  { post_id: 301, platform: 'facebook', likes: 120 },
-  { post_id: 204, platform: 'tiktok', likes: 950 },
-];
+/*
+const firstWithdrawal = movements.find(mov => mov < 0);
 
-const resultado = posts.reduce((acu, curr) => {
-  // acu is a ifnal object with lots of key value pairs
-  const currentLikes = curr.likes;
-  const currentPlatform = curr.platform;
-  if (acu[currentPlatform]) {
-    acu[currentPlatform] += currentLikes;
-  } else {
-    acu[curr.platform] = currentLikes;
-  }
-  return acu;
-}, {});
+console.log(movements); // [200, 450, -400, 3000, -650, -130, 70, 1300]
+console.log(firstWithdrawal); //  -400
+*/
 
-console.log(resultado);
+// Filter method returns a new array, find returns only the element itseld and not an array.
+
+console.clear();
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+
+console.log(movements); // [200, 450, -400, 3000, -650, -130, 70, 1300]
+console.log(firstWithdrawal); //  -400
+
+console.log(accounts);
+
+console.clear();
