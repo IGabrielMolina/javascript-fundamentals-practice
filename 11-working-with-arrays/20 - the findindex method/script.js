@@ -346,3 +346,22 @@ btnTransfer.addEventListener('click', function (e) {
     console.error('transfer NOT valid');
   }
 });
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+  if (
+    inputCloseUsername.value !== currentAcc.username ||
+    Number(inputClosePin.value) !== Number(currentAcc.pin)
+  ) {
+    console.log('Wrong credentials');
+  } else {
+    console.log(`Correct!`);
+    const index = accounts.findIndex(
+      acc => acc.username === currentAcc.username
+    );
+    console.log(`Deleting account for ${currentAcc.owner}...`);
+    // Delete UI
+    accounts.splice(index, 1);
+    containerApp.style.opacity = 100;
+  }
+});
