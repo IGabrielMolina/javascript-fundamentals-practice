@@ -350,18 +350,17 @@ btnTransfer.addEventListener('click', function (e) {
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
   if (
-    inputCloseUsername.value !== currentAcc.username ||
-    Number(inputClosePin.value) !== Number(currentAcc.pin)
+    inputCloseUsername.value === currentAcc.username &&
+    Number(inputClosePin.value) === Number(currentAcc.pin)
   ) {
-    console.log('Wrong credentials');
-  } else {
-    console.log(`Correct!`);
     const index = accounts.findIndex(
       acc => acc.username === currentAcc.username
     );
-    console.log(`Deleting account for ${currentAcc.owner}...`);
-    // Delete UI
+    console.log(index);
+    // Delete account
     accounts.splice(index, 1);
-    containerApp.style.opacity = 100;
+    // Hide UI
+    containerApp.style.opacity = 0;
   }
+  inputCloseUsername.value = inputClosePin.value = '';
 });
